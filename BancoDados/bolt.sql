@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `date` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=uft8mb3 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb3 AUTO_INCREMENT=12 ;
 
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL auto_increment,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` decimal(10,2) NOT NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `product_code` (`product_code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=uft8mb3 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb3 AUTO_INCREMENT=4 ;
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL auto_increment,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `type` varchar(20) NOT NULL default 'user',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=uft8mb3 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb3 AUTO_INCREMENT=5 ;
 
 INSERT INTO `products` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
 (1, 'BOLT1', 'Sports Shoes', 'With a clean vamp, tonal stitch details throughout, and a unique formstripe finish, the all new sports shoes fits the needs of multiple running consumers by offering an athletic and a lifestyle look.', 'sports_shoes.jpg', 26, 5000.00),
