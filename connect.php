@@ -2,7 +2,7 @@
 
 session_start();
 //                       servidor , usuario, senha, nome do banco de dados
-$con=  mysqli_connect("localhost","root","","dash");
+$con=  mysqli_connect("localhost","root","","bolt");
 
 
 ?>

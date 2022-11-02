@@ -15,7 +15,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GATE Sneakers</title>
+    <title>Sucesso!</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
@@ -37,8 +37,8 @@
 
           <?php
             if(isset($_SESSION['username'])){
-              echo '<li><a href="account.php">My Account</a></li>';
-              echo '<li><a href="logout.php">Log Out</a></li>';
+              echo '<li><a href="account.php">Minha Conta</a></li>';
+              echo '<li><a href="logout.php">Sair</a></li>';
             } else {
               echo '<li><a href="login.php">Log In</a></li>';
               echo '<li><a href="register.php">Cadastrar-se</a></li>';
@@ -47,15 +47,13 @@
         </ul>
       </section>
     </nav>
-    <center>
-    <img data-interchange="[images/logo1.png, (retina)], [images/logo1.png, (large)], [images/logo1.png, (mobile)], [images/logo1.png, (medium)]" height="700" width="700">
-    <noscript><img src="images/logo1.jpg" height="700" width="700"></noscript>
-    </center>
-    <div class="row" style="margin-top:10px;" align="middle">
+    <div class="row" style="margin-top:10px;">
       <div class="small-12">
+        <p>Sucesso! Você acabou de realizar a compra do seu novo Tênis com a GATE Sneakers. Agradeçemos pela preferência.</p>
+        <p>Para mais detalhes do seu pedido, verifique a página "Meus Pedidos".</p>
         <footer>
-          <p style="text-align:center; font-size:2em;">
-            GATE Sneakers, Abrindo portas a cada passo.
+          <p style="text-align:center; font-size:0.8em;">
+            GATE Sneakers BR
           </p>
         </footer>
       </div>

@@ -2,22 +2,26 @@
 
 include 'connect.php';
 
-$g="SELECT * FROM `classe` WHERE 1";
+$g="SELECT * FROM `products` WHERE 1";
 $qg= mysqli_query($con, $g);
 $h=mysqli_fetch_assoc($qg);
 
 
 if(isset($_POST['Cadastrar'])){
-  $nomeProduto=$_POST['nomeProduto'];
-  $idClasse=$_POST['idClass'];
+  $pcode=$_POST['product_code'];
+  $pname=$_POST['product_name'];
+  $pdesc=$_POST['product_desc'];
+  $pimg=$_POST['product_img_name'];
+  $pqty=$_POST['qty'];
+  $pprice=$_POST['price'];
 
 
-  if($nomeProduto == null || $idClasse == null){
+  if($pcode == null || $pname == null || $pdesc == null || $pimg == null || $pqty == null || $pprice == null){
       echo "<script language='javascript' type='text/javascript'>
       alert('Algum dado não foi preenchido');window.location
       .href='index.php';</script>";    
   }else{
-      $i="insert into produto (nomeProduto, fk_classProduto) values ('$nomeProduto', '$idClasse')";
+      $i="insert into products (product_code, product_name, product_desc, product_img_name, qty, price) values ('$pcode', '$pname', '$pdesc', '$pimg', '$qty', '$pprice')";
       mysqli_query($con, $i);
       echo "<script language='javascript' type='text/javascript'>
       alert('Cadastrado com sucesso');window.location
@@ -28,7 +32,12 @@ if(isset($_POST['Cadastrar'])){
 }
 
 if(isset($_POST['CadastrarClasse'])){
-  $nomeClasse=$_POST['nomeClasse'];
+  $pcode=$_POST['product_code'];
+  $pname=$_POST['product_name'];
+  $pdesc=$_POST['product_desc'];
+  $pimg=$_POST['product_img_name'];
+  $pqty=$_POST['qty'];
+  $pprice=$_POST['price'];
 
 
   if($nomeClasse == null){
@@ -47,8 +56,12 @@ if(isset($_POST['CadastrarClasse'])){
 }
 
 if(isset($_POST['Alterar'])){
-  $idProduto=$_POST['idProduto'];
-  $nomeProduto=$_POST['nomeProduto'];
+  $pcode=$_POST['product_code'];
+  $pname=$_POST['product_name'];
+  $pdesc=$_POST['product_desc'];
+  $pimg=$_POST['product_img_name'];
+  $pqty=$_POST['qty'];
+  $pprice=$_POST['price'];
 
   if($nomeProduto == null || $idProduto == null){
       echo "<script language='javascript' type='text/javascript'>
@@ -156,7 +169,7 @@ if(isset($_POST['Excluir'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a class="d-block">Penteado</a>
+          <a class="d-block">Admin</a>
         </div>
       </div>
 
@@ -169,7 +182,7 @@ if(isset($_POST['Excluir'])){
             <a href="index.php" class="nav-link">
               <i class="nav-icon fas fa-ellipsis-h"></i>
               <p>
-              Home
+              Voltar
               </p>
             </a>
           </li>

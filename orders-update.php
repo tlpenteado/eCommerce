@@ -27,15 +27,15 @@
           $query = $mysqli->query("SELECT * from orders order by date desc");
           if($query){
             while ($obj = $query->fetch_object()){
-              $subject = "Your Order ID ".$obj->id;
+              $subject = "Seu ID de Pedido ".$obj->id;
               $message = "<html><body>";
-              $message .= '<p><h4>Order ID ->'.$obj->id.'</h4></p>';
-              $message .= '<p><strong>Date of Purchase</strong>: '.$obj->date.'</p>';
-              $message .= '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
-              $message .= '<p><strong>Product Name</strong>: '.$obj->product_name.'</p>';
-              $message .= '<p><strong>Price Per Unit</strong>: '.$obj->price.'</p>';
-              $message .= '<p><strong>Units Bought</strong>: '.$obj->units.'</p>';
-              $message .= '<p><strong>Total Cost</strong>: '.$obj->total.'</p>';
+              $message .= '<p><h4>ID do Pedido ->'.$obj->id.'</h4></p>';
+              $message .= '<p><strong>Data da Compra</strong>: '.$obj->date.'</p>';
+              $message .= '<p><strong>Código do Produto</strong>: '.$obj->product_code.'</p>';
+              $message .= '<p><strong>Nome do Produto</strong>: '.$obj->product_name.'</p>';
+              $message .= '<p><strong>Preço por Unidade</strong>: '.$obj->price.'</p>';
+              $message .= '<p><strong>Unidades Compradas</strong>: '.$obj->units.'</p>';
+              $message .= '<p><strong>Custo Total</strong>: '.$obj->total.'</p>';
               $message .= "</body></html>";
               $headers = "From: support@md.deve.br";
               $headers .= "MIME-Version: 1.0\r\n";
@@ -44,7 +44,7 @@
               if($sent){
                 $message = "";
               } else {
-                echo 'Failure';
+                echo 'Erro';
               }
             }
           }
@@ -53,5 +53,5 @@
     }
   }
   unset($_SESSION['cart']);
-  header("location:success.php");
+  header("location:success2.php");
 ?>

@@ -1,44 +1,27 @@
 <?php
 
-
-
 include 'connect.php';
 
-$g="SELECT * FROM `classe` WHERE 1";
+$g="SELECT * FROM `products` WHERE 1";
 $qg= mysqli_query($con, $g);
 $h=mysqli_fetch_assoc($qg);
 
 
 if(isset($_POST['Cadastrar'])){
-  $nomeProduto=$_POST['nomeProduto'];
-  $idClasse=$_POST['idClass'];
+  $pcode=$_POST['product_code'];
+  $pname=$_POST['product_name'];
+  $pdesc=$_POST['product_desc'];
+  $pimg=$_POST['product_img_name'];
+  $pqty=$_POST['qty'];
+  $pprice=$_POST['price'];
 
 
-  if($nomeProduto == null || $idClasse == null){
+  if($pcode == null || $pname == null || $pdesc == null || $pimg == null || $pqty == null || $pprice == null){
       echo "<script language='javascript' type='text/javascript'>
       alert('Algum dado não foi preenchido');window.location
-      .href='index.php';</script>";    
+      .href='indexreg.php';</script>";    
   }else{
-      $i="insert into produto (nomeProduto, fk_classProduto) values ('$nomeProduto', '$idClasse')";
-      mysqli_query($con, $i);
-      echo "<script language='javascript' type='text/javascript'>
-      alert('Cadastrado com sucesso');window.location
-      .href='index.php';</script>";  
-      header ('location:index.php');
-  }
-
-}
-
-if(isset($_POST['CadastrarClasse'])){
-  $nomeClasse=$_POST['nomeClasse'];
-
-
-  if($nomeClasse == null){
-      echo "<script language='javascript' type='text/javascript'>
-      alert('Algum dado não foi preenchido');window.location
-      .href='index.php';</script>";    
-  }else{
-      $i="insert into classe (nomeClass) values ('$nomeClasse')";
+      $i="INSERT into products (product_code, product_name, product_desc, product_img_name, qty, price) values ('$pcode', '$pname', '$pdesc', '$pimg', '$pqty', '$pprice')";
       mysqli_query($con, $i);
       echo "<script language='javascript' type='text/javascript'>
       alert('Cadastrado com sucesso');window.location
@@ -49,26 +32,35 @@ if(isset($_POST['CadastrarClasse'])){
 }
 
 if(isset($_POST['Alterar'])){
-  $idProduto=$_POST['idProduto'];
-  $nomeProduto=$_POST['nomeProduto'];
+  $pcode=$_POST['product_code'];
+  $pname=$_POST['product_name'];
+  $pdesc=$_POST['product_desc'];
+  $pimg=$_POST['product_img_name'];
+  $pqty=$_POST['qty'];
+  $pprice=$_POST['price'];
 
   if($nomeProduto == null || $idProduto == null){
       echo "<script language='javascript' type='text/javascript'>
       alert('Algum dado não foi preenchido');window.location
-      .href='index.php';</script>";    
+      .href='indexalt.php';</script>";    
   }else{
       $i="UPDATE `produto` SET `nomeProduto` = '$nomeProduto' WHERE `produto`.`idProduto` = '$idProduto'";
       mysqli_query($con, $i);
       echo "<script language='javascript' type='text/javascript'>
       alert('Cadastrado com sucesso');window.location
-      .href='index.php';</script>";  
+      .href='indexexc.php';</script>";  
       header ('location:index.php');
   }
 
 }
 
 if(isset($_POST['Excluir'])){
-  $idProduto=$_POST['idProduto'];
+  $pcode=$_POST['product_code'];
+  $pname=$_POST['product_name'];
+  $pdesc=$_POST['product_desc'];
+  $pimg=$_POST['product_img_name'];
+  $pqty=$_POST['qty'];
+  $pprice=$_POST['price'];
 
   if($idProduto == null){
       echo "<script language='javascript' type='text/javascript'>
@@ -158,7 +150,7 @@ if(isset($_POST['Excluir'])){
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a class="d-block">Penteado</a>
+          <a class="d-block">Admin</a>
         </div>
       </div>
 
@@ -171,7 +163,7 @@ if(isset($_POST['Excluir'])){
             <a href="index.php" class="nav-link">
               <i class="nav-icon fas fa-ellipsis-h"></i>
               <p>
-              Home
+              Voltar
               </p>
             </a>
           </li>
@@ -180,14 +172,6 @@ if(isset($_POST['Excluir'])){
               <i class="nav-icon fas fa-edit"></i>
               <p>
               <strong>Cadastrar Produtos</strong>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="indexclass.php" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-              <strong>Cadastrar Classes</strong>
               </p>
             </a>
           </li>
@@ -234,12 +218,28 @@ if(isset($_POST['Excluir'])){
             <br>
             <br>
                   <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Nome do Tenis</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="nomeProduto">
+                      <label for="exampleInputEmail1" class="form-label">Código do Produto</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="product_code">
                   </div>
                   <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Classe do Tenis</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="idClass">
+                      <label for="exampleInputEmail1" class="form-label">Nome do Produto</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="product_name">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Descrição do Produto</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="product_desc">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Imagem</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="product_img_name">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Quantidade</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="qty">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Preço</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="price">
                   </div>
                   <br>
                   <input type="submit" class="btn btn-primary" id="Cadastrar" value="Cadastrar" name="Cadastrar"></input> 
