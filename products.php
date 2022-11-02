@@ -38,11 +38,11 @@
 
           <?php
             if(isset($_SESSION['username'])){
-              echo '<li><a href="account.php">My Account</a></li>';
-              echo '<li><a href="logout.php">Log Out</a></li>';
+              echo '<li><a href="account.php">Minha Conta</a></li>';
+              echo '<li><a href="logout.php">Sair</a></li>';
             } else {
               echo '<li><a href="login.php">Log In</a></li>';
-              echo '<li><a href="register.php">Register</a></li>';
+              echo '<li><a href="register.php">Cadastrar</a></li>';
             }
           ?>
         </ul>
