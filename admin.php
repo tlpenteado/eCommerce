@@ -39,6 +39,10 @@
         <ul class="right">
           <li><a href="about.php">About</a></li>
           <li><a href="products.php">Products</a></li>
+          <li><a href="indexreg.php">Cadastrar Produtos</a></li>
+          <li><a href="indexclass.php">Cadastrar Classes</a></li>
+          <li><a href="indexalt.php">Alterar Produtos</a></li>
+          <li><a href="indexexc.php">Excluir Produtos</a></li>
           <li><a href="cart.php">View Cart</a></li>
           <li><a href="orders.php">My Orders</a></li>
           <li><a href="contact.php">Contact</a></li>
