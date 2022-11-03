@@ -1,12 +1,4 @@
-/*
-//////////////////////////////////////////////////////////////////////////
-// Criacao...........: 07/2009
-// Sistema...........: Loja Virtual
-// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
-// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
-// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
-//////////////////////////////////////////////////////////////////////////
-*/
+
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";

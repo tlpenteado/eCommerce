@@ -1,11 +1,5 @@
 <?php
-//////////////////////////////////////////////////////////////////////////
-// Criacao...........: 07/2009
-// Sistema...........: Loja Virtual
-// Analistas.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
-// Desenvolvedores...: Marilene Esquiavoni & Denny Paulista Azevedo Filho
-// Copyright.........: Marilene Esquiavoni & Denny Paulista Azevedo Filho
-//////////////////////////////////////////////////////////////////////////
+
 
   if(session_id() == '' || !isset($_SESSION)){session_start();}
   if($_SESSION["type"]!="admin") {
