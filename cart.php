@@ -75,7 +75,7 @@
             echo '<td>'.$total.'</td>';
             echo '</tr>';
             echo '<tr>';
-            echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a>&nbsp;<a href="products.php" class="button [secondary success alert]">Continuar Comprando</a>';
+            echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Esvaziar Carrinho</a>&nbsp;<a href="products.php" class="button [secondary success alert]">Continuar Comprando</a>';
             if(isset($_SESSION['username'])) {
               echo '<a href="orders-update.php"><button style="float:right;">Finalizar Compra</button></a>';
             } else {
